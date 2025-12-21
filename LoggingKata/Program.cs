@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.IO;
 using GeoCoordinatePortable;
+using LoggingKata.ITrackable;
 
 namespace LoggingKata
 {
@@ -56,12 +57,14 @@ namespace LoggingKata
             // TODO: Create a loop to go through each item in your collection of locations.
             // This loop will let you select one location at a time to act as the "starting point" or "origin" location.
             // Naming suggestion for variable: `locA`
-            for (i = 0; i < locations.Length; i++)
+            for (int i = 0; i < locations.Length; i++)
             {
+                var locA = locations[i];
+                
                 geo1.latitude  = lines.Location.Latitude;
                 geo1.longitude = lines.Locations.Longitude;
 
-                for ( j = 1; locations.Length; j++ )
+                for (int j = 1; locations.Length; j++ )
                 {
                     geo2.latitude  = lines.Location.Latitude;
                     geo2.longitude = lines.Location.Longitude;

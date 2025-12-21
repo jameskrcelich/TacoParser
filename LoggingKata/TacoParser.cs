@@ -38,6 +38,13 @@
             // that conforms to ITrackable
             var tacoBell = new TacoBell( name, latitude, longitude);
             
+            var point = new Point();
+            point.Latitude  = latitude;
+            point.Longitude = longitude;
+            
+            tacoBell.Name = name;
+            tacoBell.Location = point;
+            
             // TODO: Create an instance of the Point Struct
             // TODO: Set the values of the point correctly (Latitude and Longitude) 
 
