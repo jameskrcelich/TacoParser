@@ -5,9 +5,9 @@
     /// </summary>
     public class TacoParser
     {
-        readonly ILog logger = new TacoLogger();
+        static readonly ILog logger = new TacoLogger();
         
-        public ITrackable Parse(string line)
+        public static ITrackable Parse(string line)
         {
             logger.LogInfo("Begin parsing");
 
@@ -34,13 +34,13 @@
             // TODO: Grab the name from your array at index 2
             var name = cells[2];
             
-            // TODO: Create a TacoBell class
-            // that conforms to ITrackable
-            var tacoBell = new TacoBell( name, latitude, longitude);
-            
             var point = new Point();
             point.Latitude  = latitude;
             point.Longitude = longitude;
+            
+            // TODO: Create a TacoBell class
+            // that conforms to ITrackable
+            var tacoBell = new TacoBell();
             
             tacoBell.Name = name;
             tacoBell.Location = point;
