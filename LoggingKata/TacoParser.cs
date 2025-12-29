@@ -7,7 +7,7 @@
     {
         static readonly ILog logger = new TacoLogger();
         
-        public static ITrackable Parse(string line)
+        public ITrackable Parse(string line)
         {
             logger.LogInfo("Begin parsing");
 
@@ -34,6 +34,10 @@
             // TODO: Grab the name from your array at index 2
             var name = cells[2];
             
+            /* TODO: Create an instance of the Point Struct
+             * TODO: Set the values of the point correctly
+             * (Latitude and Longitude)
+             */
             var point = new Point();
             point.Latitude  = latitude;
             point.Longitude = longitude;
@@ -42,18 +46,13 @@
             // that conforms to ITrackable
             var tacoBell = new TacoBell();
             
-            tacoBell.Name = name;
+            // TODO: Set the values of the class correctly (Name and Location)
+            tacoBell.Name     = name;
             tacoBell.Location = point;
             
-            // TODO: Create an instance of the Point Struct
-            // TODO: Set the values of the point correctly (Latitude and Longitude) 
-
-            // TODO: Create an instance of the TacoBell class
-            // TODO: Set the values of the class correctly (Name and Location)
-
-            // TODO: Then, return the instance of your TacoBell class,
-            // since it conforms to ITrackable
-
+            /* TODO: Then, return the instance of your TacoBell class,
+             * since it conforms to ITrackable
+             */
             return tacoBell;
         }
     }
